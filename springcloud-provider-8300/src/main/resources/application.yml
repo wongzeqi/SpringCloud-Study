@@ -1,0 +1,45 @@
+server:
+  port: 8300
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.wjq.springcloud.api.bean
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml
+
+spring:
+  application:
+    name: springcloud-provide
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/clouddb03
+    username: root
+    password: 20152154
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://emp.eureka6100.com:6100/eureka/,http://emp.eureka6200.com:6200/eureka/,http://emp.eureka6300.com:6300/eureka/
+  instance:
+    instance-id: springcloud-provide-8300
+    prefer-ip-address: true
+
+
+
+info:
+  author.name: wjq
+
+
+
+
+
+

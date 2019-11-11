@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wjq.springcloud.provider.dao.EmployeeDao">
+
+	<select id="findById" resultType="Employee" parameterType="Integer">
+		select empId,empName,empDB,empEmail,empSex,empAge from employee where empId=#{id};
+	</select>
+	<select id="findAll" resultType="Employee">
+		select * from employee;
+	</select>
+	<insert id="addEmployee" parameterType="Employee">
+		INSERT INTO employee(empName,empDB,empEmail,empSex,empAge) VALUES(#{empName},DATABASE(),#{empEmail},#{empSex},#{empAge});
+	</insert>
+
+</mapper>
+ 
+

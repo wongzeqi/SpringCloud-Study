@@ -1,5 +1,5 @@
 server:
-  port: 8100
+  port: 8200
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
@@ -9,11 +9,11 @@ mybatis:
 
 spring:
   application:
-    name: springcloud-provide     #这个就说服务访问的id
+    name: springcloud-provide    #这个就说服务访问的id
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
-    url: jdbc:mysql://localhost:3306/clouddb01              # 数据库名称
+    url: jdbc:mysql://localhost:3306/clouddb02              # 数据库名称
     username: root
     password: 20152154
     dbcp2:
@@ -30,13 +30,14 @@ eureka:
     service-url:
       defaultZone: http://emp.eureka6100.com:6100/eureka/,http://emp.eureka6200.com:6200/eureka/,http://emp.eureka6300.com:6300/eureka/
   instance:
-    instance-id: springcloud-provide-8100
+    instance-id: springcloud-provide-8200
     prefer-ip-address: true     #访问路径可以显示IP地址
 
 
 
 info:
   author.name: wjq
+
 
 
 

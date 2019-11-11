@@ -16,7 +16,9 @@ public class EmployeeConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final String url = "http://emp.provider8100.com:8100";
+    //private static final String url = "http://emp.provider8100.com:8100";
+    private static final String url = "http://SPRINGCLOUD-PROVIDE";
+
 
     @RequestMapping(value = "/consumer/emp/list", method = RequestMethod.GET)
     public List<Employee> list() {
