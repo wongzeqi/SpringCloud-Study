@@ -24,11 +24,14 @@ public class EmployeeConsumerController {
     }
     @RequestMapping(value = "/consumer/emp/add" , method = RequestMethod.POST)
     public boolean add(Employee e) {
-        return restTemplate.postForObject(url+"/dep/add",e,Boolean.class);
+        return restTemplate.postForObject(url+"/emp/add",e,Boolean.class);
     }
     @RequestMapping(value = "/consumer/emp/get/{id}",method = RequestMethod.GET)
     public Employee get(@PathVariable int id) {
         return restTemplate.getForObject(url + "/emp/get/"+id,Employee.class);
     }
-
+    @RequestMapping(value = "/consumer/discovery",method = RequestMethod.GET)
+    public Object discovery() {
+        return restTemplate.getForObject(url + "/discovery",Object.class);
+    }
 }
